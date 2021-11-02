@@ -4,7 +4,7 @@ const Signup = () => {
     return (
         <>
 
-            <button type="button" className="btn btn-outline-primary ms-2" data-bs-toggle="modal" data-bs-target="#signupModal">
+            <button type="button" className="btn btn-danger rounded-pill ms-2" data-bs-toggle="modal" data-bs-target="#signupModal">
                 <span className='fa fa-user-plus me-1'></span>     Register
                 </button>
 

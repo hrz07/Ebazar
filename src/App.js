@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Contact from "./components/Contact";
 import Product from "./components/Product";
 import About from "./components/About";
+import ProductDetails from "./components/ProductDetails";
 import { Switch, Route, Redirect,NavLink } from 'react-router-dom'
 
 
@@ -12,10 +13,11 @@ function App() {
     <>
     <Header/>
       <Switch>
-        <Route to='/' component={Home} />
-        <Route to='/product' component={Product} />
-        <Route to='/about' component={About} />
-        <Route to='/contact' component={Contact} />
+        <Route exact path='/' component={Home} />
+        <Route exact path='/product' component={Product} />
+        <Route exact path='/product/:id' component={ProductDetails} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/contact' component={Contact} />
         <Redirect to='/' />
       </Switch>
     <Footer/>

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const CartBtn = () => {
     return (
         <>
-            <NavLink to='/cart' className='btn btn-outline-primary ms-2' >
+            <NavLink to='/cart' className='btn btn-warning rounded-pill  ms-2' >
                 <span className='fa fa-shopping-cart me-1' ></span> Cart (0)
             </NavLink>
         </>
