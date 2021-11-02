@@ -6,7 +6,7 @@ import '../style/Product.css';
 const ProductDetails = () => {
 
     const proId = useParams()
-    const proDetail = DATA.filter(x=>x.id == proId.id)
+    const proDetail = DATA.filter(x=>x.id === proId.id)
     const product = proDetail[0];
     return (
        <>
