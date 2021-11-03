@@ -6,6 +6,7 @@ import Product from "./components/Product";
 import About from "./components/About";
 import ProductDetails from "./components/ProductDetails";
 import { Switch, Route, Redirect,NavLink } from 'react-router-dom'
+import Card from "./components/Card";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route exact path='/' component={Home} />
         <Route exact path='/product' component={Product} />
         <Route exact path='/product/:id' component={ProductDetails} />
+        <Route exact path='/card' component={Card} />
         <Route exact path='/about' component={About} />
         <Route exact path='/contact' component={Contact} />
         <Redirect to='/' />

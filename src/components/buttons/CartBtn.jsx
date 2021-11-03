@@ -1,11 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import { useSelector} from 'react-redux';
 
 const CartBtn = () => {
+    const state = useSelector((state)=> state.addItem)
     return (
         <>
-            <NavLink to='/cart' className='btn btn-warning rounded-pill  ms-2' >
-                <span className='fa fa-shopping-cart me-1' ></span> Cart (0)
+            <NavLink to='/card' className='btn btn-warning rounded-pill ms-2' >
+                <span className='fa fa-shopping-cart me-1' ></span> Cart ({state.length})
             </NavLink>
         </>
     );

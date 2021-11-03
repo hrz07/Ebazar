@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import { useParams } from 'react-router';
 import DATA from '../Data';
+import { useDispatch } from 'react-redux';
+import {addItem, delItem} from '../redux/actions/index';
 import '../style/Product.css';
 
 const ProductDetails = () => {
@@ -10,8 +12,16 @@ const ProductDetails = () => {
     const proDetail = DATA.filter(x=>x.id == proId.id)
     const product = proDetail[0];
 
+    const dispatch = useDispatch()
+
     const handleCart = (product)=>{
-        cartBtn === "Add to Cart" ? setCartBtn("Remove from Cart") : setCartBtn("Add to Cart")
+      if(cartBtn === "Add to Cart") {
+         dispatch(addItem(product))
+        setCartBtn("Remove from Cart")
+      } else{
+        dispatch(delItem(product))
+          setCartBtn("Add to Cart")
+      }
     }
 
     return (
