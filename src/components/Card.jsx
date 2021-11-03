@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
+import { NavLink } from 'react-router-dom'
 import {delItem} from '../redux/actions/index';
 
 const Card = () => {
@@ -30,9 +31,31 @@ const Card = () => {
         )
     }
 
+    const emptyCart = () =>{
+        <div className="px-4 my-5 bg-light rounded-3 py-5"  >
+                <div className="container py-4">
+                    <div className="row">
+                        <h3>Your Cart is empty</h3>
+                    </div>
+                </div>
+        </div>
+    }
+
+    const button = ()=>{
+        return(
+            <div className="container">
+                <div className="row">
+                    <NavLink to='/checkout' className='btn btn-outline-primary mb-5 w-25 mx-auto'>Proceed To Checkout</NavLink>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <>
+            {state.length === 0 && emptyCart() }
             {state.lenght !== 0 && state.map(cartItems) }
+            {state.lenght !== 0 && button() }
         </>
     );
 }
